@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'mygegegems'
+require "tildoc"
 
 module Helpers
   def source_root
