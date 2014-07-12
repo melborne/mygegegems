@@ -15,7 +15,7 @@ module Mygegegems
     option :target, 
             aliases:'-t',
             default:'last',
-            decs:"Target to compare. any of 'last', 'last_month' or 'last_year'"
+            desc:"Target to compare. any of 'last', 'last_month' or 'last_year'"
     def stat
       target = options[:target].intern
       date, gems = Stat.latest
