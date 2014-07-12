@@ -41,6 +41,17 @@ module Mygegegems
         res
       end
 
+      def total(target=:last)
+        date, gems = latest
+        (date, t_date), diffs = diff(target)
+        total = gems.inject(0) { |sum, (_, dl)| sum + dl }
+        diff_total =  diffs.inject(0) do |sum, (_, dl)|
+          dl = 0 if dl.nil?
+          sum + dl
+        end
+        [total, diff_total, gems.size]
+      end
+
       private
       def load(path=DATA_PATH)
         YAML.load_file(path)

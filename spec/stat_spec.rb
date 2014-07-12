@@ -57,4 +57,13 @@ describe Mygegegems::Stat do
       expect(gems['tildoc']).to be_nil
     end
   end
+
+  describe ".total" do
+    it "returns total stats" do
+      total, diff_total, gems = described_class.total(:last)
+      expect(total).to eq 7282
+      expect(diff_total).to eq 164
+      expect(gems).to eq 6
+    end
+  end
 end
