@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["kyoendo"]
   spec.email         = ["postagie@gmail.com"]
   spec.summary       = %q{Report download numbers of you gems.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/melborne/mygegegems"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
