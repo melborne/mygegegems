@@ -1,6 +1,6 @@
 # Mygegegems
 
-TODO: Write a gem description
+Report download numbers of you gems.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`mygegegems help` command helps you.
 
 ## Contributing
 
