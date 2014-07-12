@@ -4,6 +4,7 @@ require "gems"
 require "mygegegems/version"
 require "mygegegems/client"
 require "mygegegems/stat"
+require "mygegegems/cli"
 
 module Mygegegems
   DATA_PATH = File.expand_path('~/.mygegegems.yaml')
@@ -11,10 +12,6 @@ module Mygegegems
   class << self
     def update
       Client.new.update
-    end
-
-    def stat
-      Stat.list
     end
   end
 end
