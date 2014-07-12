@@ -27,6 +27,20 @@ module Mygegegems
         @data ||= load
       end
 
+      def diff(target=:last, base=:latest)
+        raise ArgumentError unless respond_to?(target) && respond_to?(base)
+        res = []
+        date, gems = send(base)
+        t_date, t_gems = send(target)
+        res << [date, t_date]
+        diff = gems.each_with_object({}) do |(name, dl), h|
+          t_dl = t_gems[name]
+          h[name] = t_dl ? (dl - t_dl) : nil
+        end
+        res << diff
+        res
+      end
+
       private
       def load(path=DATA_PATH)
         YAML.load_file(path)
