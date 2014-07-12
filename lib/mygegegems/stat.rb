@@ -32,6 +32,7 @@ module Mygegegems
         res = []
         date, gems = send(base)
         t_date, t_gems = send(target)
+        return [] unless t_date
         res << [date, t_date]
         diff = gems.each_with_object({}) do |(name, dl), h|
           t_dl = t_gems[name]
@@ -45,10 +46,15 @@ module Mygegegems
         date, gems = latest
         (date, t_date), diffs = diff(target)
         total = gems.inject(0) { |sum, (_, dl)| sum + dl }
-        diff_total =  diffs.inject(0) do |sum, (_, dl)|
-          dl = 0 if dl.nil?
-          sum + dl
-        end
+        diff_total =
+          if diffs
+              diffs.inject(0) do |sum, (_, dl)|
+                dl = 0 if dl.nil?
+                sum + dl
+              end
+          else
+            nil
+          end
         [total, diff_total, gems.size]
       end
 

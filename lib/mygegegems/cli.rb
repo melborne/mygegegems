@@ -18,8 +18,8 @@ module Mygegegems
             decs:"Target to compare. any of 'last', 'last_month' or 'last_year'"
     def stat
       target = options[:target].intern
-      _, gems = Stat.latest
-      (date, t_date), diffs = Stat.diff(target)
+      date, gems = Stat.latest
+      (_, t_date), diffs = Stat.diff(target)
       total, diff_total, num_of_gems = Stat.total(target)
       space1, space2 = [total, diff_total].map { |t| t.to_s.size }
       header = header(date, t_date, target)
@@ -38,7 +38,7 @@ module Mygegegems
       def body(gems, diffs, space1, space2)
         gems = gems.sort_by { |_, dl| -dl }
         gems.map do |name, dl|
-          if diff = diffs[name]
+          if diffs && (diff = diffs[name])
             "%#{space1}d +%#{space2}d %s" % [dl, diffs[name], name]
           else
             none = "-".center(space2)
@@ -48,22 +48,12 @@ module Mygegegems
       end
 
       def footer(total, diff_total, num_of_gems, space1, space2)
-        "%#{space1}d +%#{space2}d %s gems" % [total, diff_total, num_of_gems]
+        if diff_total
+          "%#{space1}d +%#{space2}d %s gems" % [total, diff_total, num_of_gems]
+        else
+          "%#{space1}d %s gems" % [total, num_of_gems]
+        end
       end
     end
   end  
 end
-
-
-__END__
-
-As of 2014-07-11 (last: 2014-07-10)
------------------------------------
-3345   -  let_it_fall
-2225 +100 togglate
- 762   +2 emot
- 354   +4 gh-diff
- 299  +18 matreska
- 297  +30 tildoc
------------------------------------
-7280 +154 6 gems
