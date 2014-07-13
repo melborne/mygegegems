@@ -54,6 +54,12 @@ module Mygegegems
       puts footer
     end
 
+    desc "version", "Show Mygegegems version"
+    def version
+      puts "Mygegegems #{Mygegegems::VERSION} (c) 2014 kyoendo"
+    end
+    map "-v" => :version
+
     no_tasks do
       def header(date1, date2, label)
         "As of #{date1} (#{label}: \e[33m#{date2}\e[0m)"
