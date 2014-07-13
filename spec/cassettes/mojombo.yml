@@ -1,0 +1,246 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/owners/mojombo/gems.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 62170126500026ba4521a4aaf9dcb275
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 13 Jul 2014 02:37:17 GMT
+      Content-Type:
+      - text/yaml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Cache-Control:
+      - private
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      - IE=Edge,chrome=1
+      Etag:
+      - '"8efd4ab32175934163c9082872e55eff"'
+      Set-Cookie:
+      - remember_token=; path=/; expires=Mon, 13-Jul-2015 02:37:17 GMT; secure
+      X-Request-Id:
+      - ce20acc3d66b61a59ffd287324a81a20
+      X-Runtime:
+      - '0.355643'
+      X-Rack-Cache:
+      - miss
+    body:
+      encoding: UTF-8
+      string: "---\n- name: mercenary\n  downloads: 71844\n  version: 0.3.4\n  version_downloads:
+        1028\n  platform: ruby\n  authors: Tom Preston-Werner, Parker Moore\n  info:
+        Lightweight and flexible library for writing command-line apps in Ruby.\n
+        \ licenses:\n  - MIT\n  project_uri: http://rubygems.org/gems/mercenary\n
+        \ gem_uri: http://rubygems.org/gems/mercenary-0.3.4.gem\n  homepage_uri: https://github.com/jekyll/mercenary\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development:\n    - name: bundler\n
+        \     requirements: ~> 1.3\n    - name: rake\n      requirements: ! '>= 0'\n
+        \   - name: rspec\n      requirements: ~> 2.14\n    runtime: []\n- name: jekyll-import\n
+        \ downloads: 6766\n  version: 0.4.0\n  version_downloads: 271\n  platform:
+        ruby\n  authors: Tom Preston-Werner\n  info: Provides the Import command for
+        Jekyll.\n  licenses:\n  - MIT\n  project_uri: http://rubygems.org/gems/jekyll-import\n
+        \ gem_uri: http://rubygems.org/gems/jekyll-import-0.4.0.gem\n  homepage_uri:
+        http://github.com/jekyll/jekyll-import\n  wiki_uri: \n  documentation_uri:
+        \n  mailing_list_uri: \n  source_code_uri: \n  bug_tracker_uri: \n  dependencies:\n
+        \   development:\n    - name: activesupport\n      requirements: ~> 3.2\n
+        \   - name: behance\n      requirements: ~> 0.3\n    - name: hpricot\n      requirements:
+        ~> 0.8\n    - name: htmlentities\n      requirements: ~> 4.3\n    - name:
+        launchy\n      requirements: ~> 2.4\n    - name: mysql\n      requirements:
+        ~> 2.8\n    - name: mysql2\n      requirements: ~> 0.3\n    - name: pg\n      requirements:
+        ~> 0.12\n    - name: rake\n      requirements: ~> 10.1.0\n    - name: rdoc\n
+        \     requirements: ~> 4.0.0\n    - name: redgreen\n      requirements: ~>
+        1.2\n    - name: rr\n      requirements: ~> 1.0\n    - name: sequel\n      requirements:
+        ~> 3.42\n    - name: shoulda\n      requirements: ~> 3.5\n    - name: simplecov\n
+        \     requirements: ~> 0.7\n    - name: simplecov-gem-adapter\n      requirements:
+        ~> 1.0.1\n    - name: unidecode\n      requirements: ! '>= 0'\n    runtime:\n
+        \   - name: fastercsv\n      requirements: ! '>= 0'\n    - name: jekyll\n
+        \     requirements: ! '>= 1.4'\n    - name: nokogiri\n      requirements:
+        ! '>= 0'\n- name: github\n  downloads: 60694\n  version: 0.7.2\n  version_downloads:
+        14630\n  platform: ruby\n  authors: Chris Wanstrath, Kevin Ballard, Scott
+        Chacon, Dr Nic Williams\n  info: The official `github` command line helper
+        for simplifying your GitHub experience.\n  licenses: \n  project_uri: http://rubygems.org/gems/github\n
+        \ gem_uri: http://rubygems.org/gems/github-0.7.2.gem\n  homepage_uri: https://github.com/defunkt/github-gem\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development:\n    - name: activerecord\n
+        \     requirements: ~> 3.0.0\n    - name: rake\n      requirements: ! '>=
+        0'\n    - name: rspec\n      requirements: ~> 1.3.1\n    runtime:\n    - name:
+        highline\n      requirements: ~> 1.6\n    - name: json_pure\n      requirements:
+        ~> 1.5.1\n    - name: launchy\n      requirements: ~> 2.0.2\n    - name: text-format\n
+        \     requirements: = 1.0.0\n    - name: text-hyphen\n      requirements:
+        = 1.0.0\n- name: god\n  downloads: 809290\n  version: 0.13.4\n  version_downloads:
+        102914\n  platform: ruby\n  authors: Tom Preston-Werner, Kevin Clark, Eric
+        Lindvall\n  info: An easy to configure, easy to extend monitoring framework
+        written in Ruby.\n  licenses: []\n  project_uri: http://rubygems.org/gems/god\n
+        \ gem_uri: http://rubygems.org/gems/god-0.13.4.gem\n  homepage_uri: http://god.rubyforge.org/\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development:\n    - name: activesupport\n
+        \     requirements: < 4.0.0, >= 2.3.10\n    - name: airbrake\n      requirements:
+        ~> 3.1.7\n    - name: daemons\n      requirements: ~> 1.1\n    - name: dike\n
+        \     requirements: ~> 0.0.3\n    - name: gollum\n      requirements: ~> 1.3.1\n
+        \   - name: json\n      requirements: ~> 1.6\n    - name: mocha\n      requirements:
+        ~> 0.10\n    - name: nokogiri\n      requirements: ~> 1.5.0\n    - name: prowly\n
+        \     requirements: ~> 0.3\n    - name: rake\n      requirements: ! '>= 0'\n
+        \   - name: rcov\n      requirements: ~> 0.9\n    - name: rdoc\n      requirements:
+        ~> 3.10\n    - name: twitter\n      requirements: ~> 4.0\n    - name: xmpp4r\n
+        \     requirements: ~> 0.5\n    runtime: []\n- name: bertrpc\n  downloads:
+        51629\n  version: 1.3.1\n  version_downloads: 13345\n  platform: ruby\n  authors:
+        Tom Preston-Werner\n  info: BERTRPC is a Ruby BERT-RPC client library.\n  licenses:
+        \n  project_uri: http://rubygems.org/gems/bertrpc\n  gem_uri: http://rubygems.org/gems/bertrpc-1.3.1.gem\n
+        \ homepage_uri: http://github.com/mojombo/bertrpc\n  wiki_uri: \n  documentation_uri:
+        \n  mailing_list_uri: \n  source_code_uri: \n  bug_tracker_uri: \n  dependencies:\n
+        \   development: []\n    runtime:\n    - name: bert\n      requirements: <
+        2.0.0, >= 1.1.0\n- name: ernie\n  downloads: 33418\n  version: 2.5.2\n  version_downloads:
+        4470\n  platform: ruby\n  authors: Tom Preston-Werner\n  info: Ernie is an
+        Erlang/Ruby hybrid BERT-RPC server implementation packaged as\n    a gem.\n
+        \ licenses: \n  project_uri: http://rubygems.org/gems/ernie\n  gem_uri: http://rubygems.org/gems/ernie-2.5.2.gem\n
+        \ homepage_uri: http://github.com/mojombo/ernie\n  wiki_uri: \n  documentation_uri:
+        \n  mailing_list_uri: \n  source_code_uri: \n  bug_tracker_uri: \n  dependencies:\n
+        \   development:\n    - name: shoulda\n      requirements: ! '>= 2.11.3, <
+        3.0.0'\n    runtime:\n    - name: bert\n      requirements: ! '>= 1.1.0'\n
+        \   - name: bertrpc\n      requirements: ! '>= 1.0.0'\n- name: erlectricity\n
+        \ downloads: 12490\n  version: 1.1.1\n  version_downloads: 3292\n  platform:
+        ruby\n  authors: Scott Fleckenstein, Tom Preston-Werner\n  info: A library
+        to interface erlang and ruby through the erlang port system\n  licenses: \n
+        \ project_uri: http://rubygems.org/gems/erlectricity\n  gem_uri: http://rubygems.org/gems/erlectricity-1.1.1.gem\n
+        \ homepage_uri: http://github.com/mojombo/erlectricity\n  wiki_uri: \n  documentation_uri:
+        \n  mailing_list_uri: \n  source_code_uri: \n  bug_tracker_uri: \n  dependencies:\n
+        \   development: []\n    runtime: []\n- name: jekyll\n  downloads: 809463\n
+        \ version: 2.1.1\n  version_downloads: 2389\n  platform: ruby\n  authors:
+        Tom Preston-Werner\n  info: Jekyll is a simple, blog aware, static site generator.\n
+        \ licenses:\n  - MIT\n  project_uri: http://rubygems.org/gems/jekyll\n  gem_uri:
+        http://rubygems.org/gems/jekyll-2.1.1.gem\n  homepage_uri: https://github.com/jekyll/jekyll\n
+        \ wiki_uri: ''\n  documentation_uri: http://jekyllrb.com\n  mailing_list_uri:
+        ''\n  source_code_uri: https://github.com/mojombo/jekyll\n  bug_tracker_uri:
+        https://github.com/mojombo/jekyll/issues\n  dependencies:\n    development:\n
+        \   - name: activesupport\n      requirements: ~> 3.2.13\n    - name: cucumber\n
+        \     requirements: = 1.3.11\n    - name: jekyll_test_plugin\n      requirements:
+        ! '>= 0'\n    - name: jekyll_test_plugin_malicious\n      requirements: !
+        '>= 0'\n    - name: launchy\n      requirements: ~> 2.3\n    - name: maruku\n
+        \     requirements: ~> 0.7.0\n    - name: mime-types\n      requirements:
+        ~> 1.5\n    - name: rake\n      requirements: ~> 10.1\n    - name: rdiscount\n
+        \     requirements: ~> 1.6\n    - name: rdoc\n      requirements: ~> 3.11\n
+        \   - name: RedCloth\n      requirements: ~> 4.2\n    - name: redgreen\n      requirements:
+        ~> 1.2\n    - name: rouge\n      requirements: ~> 1.3\n    - name: rr\n      requirements:
+        ~> 1.1\n    - name: shoulda\n      requirements: ~> 3.5\n    - name: simplecov\n
+        \     requirements: ~> 0.7\n    - name: simplecov-gem-adapter\n      requirements:
+        ~> 1.0.1\n    runtime:\n    - name: classifier\n      requirements: ~> 1.3\n
+        \   - name: colorator\n      requirements: ~> 0.1\n    - name: jekyll-coffeescript\n
+        \     requirements: ~> 1.0\n    - name: jekyll-gist\n      requirements: ~>
+        1.0\n    - name: jekyll-paginate\n      requirements: ~> 1.0\n    - name:
+        jekyll-sass-converter\n      requirements: ~> 1.0\n    - name: jekyll-watch\n
+        \     requirements: ~> 1.0\n    - name: kramdown\n      requirements: ~> 1.3\n
+        \   - name: liquid\n      requirements: ~> 2.6.1\n    - name: mercenary\n
+        \     requirements: ~> 0.3.3\n    - name: pygments.rb\n      requirements:
+        ~> 0.6.0\n    - name: redcarpet\n      requirements: ~> 3.1\n    - name: safe_yaml\n
+        \     requirements: ~> 1.0\n    - name: toml\n      requirements: ~> 0.1.0\n-
+        name: proxymachine\n  downloads: 45534\n  version: 1.2.4\n  version_downloads:
+        31941\n  platform: ruby\n  authors: Tom Preston-Werner\n  info: ProxyMachine
+        is a simple content aware (layer 7) TCP routing proxy written\n    in Ruby
+        with EventMachine.\n  licenses: \n  project_uri: http://rubygems.org/gems/proxymachine\n
+        \ gem_uri: http://rubygems.org/gems/proxymachine-1.2.4.gem\n  homepage_uri:
+        http://github.com/mojombo/proxymachine\n  wiki_uri: \n  documentation_uri:
+        \n  mailing_list_uri: \n  source_code_uri: \n  bug_tracker_uri: \n  dependencies:\n
+        \   development:\n    - name: jeweler\n      requirements: ~> 1.5.2\n    -
+        name: rake\n      requirements: ~> 0.8.7\n    - name: shoulda\n      requirements:
+        ~> 2.11.3\n    runtime:\n    - name: eventmachine\n      requirements: ! '>=
+        0.12.10'\n- name: bert\n  downloads: 72016\n  version: 1.1.6\n  version_downloads:
+        37893\n  platform: ruby\n  authors: Tom Preston-Werner\n  info: BERT Serializiation
+        for Ruby\n  licenses: \n  project_uri: http://rubygems.org/gems/bert\n  gem_uri:
+        http://rubygems.org/gems/bert-1.1.6.gem\n  homepage_uri: http://github.com/mojombo/bert\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development:\n    - name: thoughtbot-shoulda\n
+        \     requirements: ! '>= 0'\n    runtime: []\n- name: grit\n  downloads:
+        614999\n  version: 2.5.0\n  version_downloads: 394640\n  platform: ruby\n
+        \ authors: Tom Preston-Werner, Scott Chacon\n  info: Grit is a Ruby library
+        for extracting information from a git repository in\n    an object oriented
+        manner.\n  licenses: \n  project_uri: http://rubygems.org/gems/grit\n  gem_uri:
+        http://rubygems.org/gems/grit-2.5.0.gem\n  homepage_uri: http://github.com/mojombo/grit\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development:\n    - name: mocha\n
+        \     requirements: ! '>= 0'\n    runtime:\n    - name: diff-lcs\n      requirements:
+        ~> 1.1\n    - name: mime-types\n      requirements: ~> 1.15\n    - name: posix-spawn\n
+        \     requirements: ~> 0.3.6\n- name: chronic\n  downloads: 4275480\n  version:
+        0.10.2\n  version_downloads: 889801\n  platform: ruby\n  authors: Tom Preston-Werner,
+        Lee Jarvis\n  info: Chronic is a natural language date/time parser written
+        in pure Ruby.\n  licenses:\n  - MIT\n  project_uri: http://rubygems.org/gems/chronic\n
+        \ gem_uri: http://rubygems.org/gems/chronic-0.10.2.gem\n  homepage_uri: http://github.com/mojombo/chronic\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development:\n    - name: activesupport\n
+        \     requirements: ! '>= 0'\n    - name: minitest\n      requirements: ~>
+        5.0\n    - name: rake\n      requirements: ! '>= 0'\n    - name: simplecov\n
+        \     requirements: ! '>= 0'\n    runtime: []\n- name: fuzed\n  downloads:
+        1636\n  version: 0.1.0\n  version_downloads: 1635\n  platform: ruby\n  authors:
+        Dave Fayram, Tom Preston-Werner\n  info: The author was too lazy to write
+        a description\n  licenses: \n  project_uri: http://rubygems.org/gems/fuzed\n
+        \ gem_uri: http://rubygems.org/gems/fuzed-0.1.0.gem\n  homepage_uri: fuzed.rubyforge.org\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development: []\n    runtime:\n
+        \   - name: erlectricity\n      requirements: ! '>= 0.1.0'\n    - name: hoe\n
+        \     requirements: ! '>= 1.2.1'\n- name: syntaxi\n  downloads: 3209\n  version:
+        0.5.0\n  version_downloads: 3207\n  platform: ruby\n  authors: Tom Werner\n
+        \ info: Syntaxi formats code blocks in text (line number, line wrap, syntax
+        color)\n  licenses: \n  project_uri: http://rubygems.org/gems/syntaxi\n  gem_uri:
+        http://rubygems.org/gems/syntaxi-0.5.0.gem\n  homepage_uri: http://syntaxi.rubyforge.org\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development: []\n    runtime:\n
+        \   - name: syntax\n      requirements: = 1.0.0\n- name: jungle\n  downloads:
+        1465\n  version: 0.1.0\n  version_downloads: 1464\n  platform: ruby\n  authors:
+        Ryan Davis\n  info: Jungle is a client library for the Amazon SQS (Simple
+        Queue Service). It provides\n    an intuitive, well documented API and a fully
+        tested codebase.\n  licenses: \n  project_uri: http://rubygems.org/gems/jungle\n
+        \ gem_uri: http://rubygems.org/gems/jungle-0.1.0.gem\n  homepage_uri: ! \"\\thttp://jungle.rubyforge.org/\"\n
+        \ wiki_uri: \n  documentation_uri: \n  mailing_list_uri: \n  source_code_uri:
+        \n  bug_tracker_uri: \n  dependencies:\n    development: []\n    runtime:
+        []\n- name: gollum\n  downloads: 104061\n  version: 3.0.0\n  version_downloads:
+        4150\n  platform: ruby\n  authors: Tom Preston-Werner, Rick Olson\n  info:
+        A simple, Git-powered wiki with a sweet API and local frontend.\n  licenses:\n
+        \ - MIT\n  project_uri: http://rubygems.org/gems/gollum\n  gem_uri: http://rubygems.org/gems/gollum-3.0.0.gem\n
+        \ homepage_uri: http://github.com/gollum/gollum\n  wiki_uri: ''\n  documentation_uri:
+        https://github.com/gollum/gollum\n  mailing_list_uri: ''\n  source_code_uri:
+        https://github.com/gollum/gollum\n  bug_tracker_uri: https://github.com/gollum/gollum/issues\n
+        \ dependencies:\n    development:\n    - name: minitest-reporters\n      requirements:
+        ~> 0.14.16\n    - name: mocha\n      requirements: ~> 1.0.0\n    - name: rack-test\n
+        \     requirements: ~> 0.6.2\n    - name: shoulda\n      requirements: ~>
+        3.5.0\n    - name: twitter_cldr\n      requirements: ~> 2.4.2\n    runtime:\n
+        \   - name: github-markdown\n      requirements: ~> 0.6.5\n    - name: gollum-lib\n
+        \     requirements: ~> 3.0\n    - name: mustache\n      requirements: < 1.0.0,
+        >= 0.99.5\n    - name: sinatra\n      requirements: ! '>= 1.4.4, ~> 1.4'\n
+        \   - name: useragent\n      requirements: ~> 0.10.0\n"
+    http_version: 
+  recorded_at: Sun, 13 Jul 2014 02:37:17 GMT
+recorded_with: VCR 2.9.2

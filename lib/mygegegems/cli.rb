@@ -21,22 +21,37 @@ module Mygegegems
             default:false,
             type: :boolean,
             desc:"Update local data before showing stat"
+    option :handle,
+            aliases:'-h',
+            desc:"Show stat of gems of a user with given handle"
     def stat
-      invoke(:update, [], {}) if options[:update]
+      if handle = options[:handle]
+        gems = Mygegegems.gems(handle)
+        header = "#{handle}'s gems"
+        border_line = "-" * 30
+        total = gems.inject(0) { |sum, (_, dl)| sum + dl }
+        num_of_gems = gems.size
+        body = body(gems, {}, total.to_s.size, 3)
+        footer = footer(total, nil, gems.size)
+      else
+        invoke(:update, [], {}) if options[:update]
 
-      target = options[:target].intern
-      date, gems = Stat.latest
-      (_, t_date), diffs = Stat.diff(target)
-      total, diff_total, num_of_gems = Stat.total(target)
-      space1, space2 = [total, diff_total].map { |t| t.to_s.size }
-      header = header(date, t_date, target)
-      border_line = "-" * real_size(header)
+        target = options[:target].intern
+        date, gems = Stat.latest
+        (_, t_date), diffs = Stat.diff(target)
+        total, diff_total, num_of_gems = Stat.total(target)
+        space1, space2 = [total, diff_total].map { |t| t.to_s.size }
+        header = header(date, t_date, target)
+        border_line = "-" * real_size(header)
+        body = body(gems, diffs, space1, space2)
+        footer = footer(total, diff_total, num_of_gems, space1, space2)
+      end
 
       puts header
       puts border_line
-      puts body(gems, diffs, space1, space2)
+      puts body
       puts border_line
-      puts footer(total, diff_total, num_of_gems, space1, space2)
+      puts footer
     end
 
     no_tasks do
@@ -56,7 +71,7 @@ module Mygegegems
         end
       end
 
-      def footer(total, diff_total, num_of_gems, space1, space2)
+      def footer(total, diff_total, num_of_gems, space1=0, space2=0)
         if diff_total
           "%#{space1}d \e[33m+%#{space2}d \e[32m%s gems\e[0m" % [total, diff_total, num_of_gems]
         else
