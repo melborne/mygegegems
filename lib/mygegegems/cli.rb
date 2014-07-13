@@ -24,6 +24,10 @@ module Mygegegems
     option :handle,
             aliases:'-h',
             desc:"Show stat of gems of a user with given handle"
+    option :sort,
+            aliases:'-s',
+            default:'download',
+            desc:"Sort a list by given title. any of 'name', 'diff' or 'download'"
     def stat
       if handle = options[:handle]
         gems = Mygegegems.gems(handle)
@@ -31,7 +35,7 @@ module Mygegegems
         border_line = "-" * 30
         total = gems.inject(0) { |sum, (_, dl)| sum + dl }
         num_of_gems = gems.size
-        body = body(gems, {}, total.to_s.size, 3)
+        body = body(gems, {}, total.to_s.size, 3, options[:sort])
         footer = footer(total, nil, gems.size)
       else
         invoke(:update, [], {}) if options[:update]
@@ -43,7 +47,7 @@ module Mygegegems
         space1, space2 = [total, diff_total].map { |t| t.to_s.size }
         header = header(date, t_date, target)
         border_line = "-" * real_size(header)
-        body = body(gems, diffs, space1, space2)
+        body = body(gems, diffs, space1, space2, options[:sort])
         footer = footer(total, diff_total, num_of_gems, space1, space2)
       end
 
@@ -65,16 +69,25 @@ module Mygegegems
         "As of #{date1} (#{label}: \e[33m#{date2}\e[0m)"
       end
 
-      def body(gems, diffs, space1, space2)
-        gems = gems.sort_by { |_, dl| -dl }
-        gems.map do |name, dl|
-          if diffs && (diff = diffs[name])
-            "%#{space1}d \e[33m+%#{space2}d \e[32m%s\e[0m" % [dl, diffs[name], name]
-          else
-            none = "-".center(space2)
-            "%#{space1}d  \e[33m#{none} \e[32m%s\e[0m" % [dl, name]
-          end
-        end
+      def body(gems, diffs, space1, space2, sort)
+        gems.map { |name, dl|
+              diff = diffs && diffs[name] || -1
+              [dl, diff, name]
+            }.sort_by { |arr|
+              case sort.intern
+              when :download then -arr[0]
+              when :diff     then -arr[1]
+              when :name     then arr[2]
+              else -arr[0]
+              end
+            }.map { |dl, diff, name|
+              if diff >= 0
+                "%#{space1}d \e[33m+%#{space2}d \e[32m%s\e[0m" % [dl, diff, name]
+              else
+                none = "-".center(space2)
+                "%#{space1}d  \e[33m#{none} \e[32m%s\e[0m" % [dl, name]
+              end
+            }
       end
 
       def footer(total, diff_total, num_of_gems, space1=0, space2=0)

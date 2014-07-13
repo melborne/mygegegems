@@ -77,5 +77,39 @@ describe Mygegegems::CLI do
         end
       end
     end
+
+    context "with sort option" do
+      it "sorts results by name" do
+        described_class.start(['stat', '--sort', 'name'])
+        expect($stdout.string).to eq ~<<-EOS
+          As of 2014-07-11 (last: \e[33m2014-07-10\e[0m)
+          -----------------------------------
+           762 \e[33m+  2 \e[32memot\e[0m
+           354 \e[33m+ 14 \e[32mgh-diff\e[0m
+          3345 \e[33m+  0 \e[32mlet_it_fall\e[0m
+           299 \e[33m+ 18 \e[32mmatreska\e[0m
+           297 \e[33m+ 30 \e[32mtildoc\e[0m
+          2225 \e[33m+100 \e[32mtogglate\e[0m
+          -----------------------------------
+          7282 \e[33m+164 \e[32m6 gems\e[0m
+        EOS
+      end
+
+      it "sorts results by diff" do
+        described_class.start(['stat', '--sort', 'diff'])
+        expect($stdout.string).to eq ~<<-EOS
+          As of 2014-07-11 (last: \e[33m2014-07-10\e[0m)
+          -----------------------------------
+          2225 \e[33m+100 \e[32mtogglate\e[0m
+           297 \e[33m+ 30 \e[32mtildoc\e[0m
+           299 \e[33m+ 18 \e[32mmatreska\e[0m
+           354 \e[33m+ 14 \e[32mgh-diff\e[0m
+           762 \e[33m+  2 \e[32memot\e[0m
+          3345 \e[33m+  0 \e[32mlet_it_fall\e[0m
+          -----------------------------------
+          7282 \e[33m+164 \e[32m6 gems\e[0m
+        EOS
+      end
+    end
   end
 end
