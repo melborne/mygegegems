@@ -23,11 +23,12 @@ module Mygegegems
       total, diff_total, num_of_gems = Stat.total(target)
       space1, space2 = [total, diff_total].map { |t| t.to_s.size }
       header = header(date, t_date, target)
+      border_line = "-" * real_size(header)
 
       puts header
-      puts "-" * header.size
+      puts border_line
       puts body(gems, diffs, space1, space2)
-      puts "-" * header.size
+      puts border_line
       puts footer(total, diff_total, num_of_gems, space1, space2)
     end
 
@@ -54,6 +55,10 @@ module Mygegegems
         else
           "%#{space1}d %s gems" % [total, num_of_gems]
         end
+      end
+
+      def real_size(str)
+        str.gsub(/\e\[\d+m/, '').size
       end
     end
   end  

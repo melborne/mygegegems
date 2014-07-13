@@ -17,16 +17,16 @@ describe Mygegegems::CLI do
     it "returns statics of your gems" do
       described_class.start(['stat'])
       expect($stdout.string).to eq ~<<-EOS
-        As of 2014-07-11 (last: 2014-07-10)
+        As of 2014-07-11 (last: \e[33m2014-07-10\e[0m)
         -----------------------------------
-        3345 +  0 let_it_fall
-        2225 +100 togglate
-         762 +  2 emot
-         354 + 14 gh-diff
-         299 + 18 matreska
-         297 + 30 tildoc
+        3345 \e[33m+  0 \e[32mlet_it_fall\e[0m
+        2225 \e[33m+100 \e[32mtogglate\e[0m
+         762 \e[33m+  2 \e[32memot\e[0m
+         354 \e[33m+ 14 \e[32mgh-diff\e[0m
+         299 \e[33m+ 18 \e[32mmatreska\e[0m
+         297 \e[33m+ 30 \e[32mtildoc\e[0m
         -----------------------------------
-        7282 +164 6 gems
+        7282 \e[33m+164 \e[32m6 gems\e[0m
       EOS
     end
 
@@ -34,16 +34,16 @@ describe Mygegegems::CLI do
       it "returns statics of your gems" do
         described_class.start(['stat', '--target', 'last_month'])
         expect($stdout.string).to eq ~<<-EOS
-          As of 2014-07-11 (last_month: 2014-06-30)
+          As of 2014-07-11 (last_month: \e[33m2014-06-30\e[0m)
           -----------------------------------------
-          3345 +123 let_it_fall
-          2225 +225 togglate
-           762 +162 emot
-           354   -  gh-diff
-           299 + 21 matreska
-           297   -  tildoc
+          3345 \e[33m+123 \e[32mlet_it_fall\e[0m
+          2225 \e[33m+225 \e[32mtogglate\e[0m
+           762 \e[33m+162 \e[32memot\e[0m
+           354  \e[33m -  \e[32mgh-diff\e[0m
+           299 \e[33m+ 21 \e[32mmatreska\e[0m
+           297  \e[33m -  \e[32mtildoc\e[0m
           -----------------------------------------
-          7282 +531 6 gems
+          7282 \e[33m+531 \e[32m6 gems\e[0m
         EOS
       end
     end
