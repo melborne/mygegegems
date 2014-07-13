@@ -16,7 +16,14 @@ module Mygegegems
             aliases:'-t',
             default:'last',
             desc:"Target to compare. any of 'last', 'last_month' or 'last_year'"
+    option :update,
+            aliases:'-u',
+            default:false,
+            type: :boolean,
+            desc:"Update local data before showing stat"
     def stat
+      invoke(:update, [], {}) if options[:update]
+
       target = options[:target].intern
       date, gems = Stat.latest
       (_, t_date), diffs = Stat.diff(target)
