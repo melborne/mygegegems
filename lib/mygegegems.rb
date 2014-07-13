@@ -13,5 +13,9 @@ module Mygegegems
     def update
       Client.new.update
     end
+
+    def gems(user)
+      Client.new.gems(user)
+    end
   end
 end

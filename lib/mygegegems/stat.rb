@@ -48,10 +48,10 @@ module Mygegegems
         total = gems.inject(0) { |sum, (_, dl)| sum + dl }
         diff_total =
           if diffs
-              diffs.inject(0) do |sum, (_, dl)|
-                dl = 0 if dl.nil?
-                sum + dl
-              end
+            diffs.inject(0) do |sum, (_, dl)|
+              dl = 0 if dl.nil?
+              sum + dl
+            end
           else
             nil
           end

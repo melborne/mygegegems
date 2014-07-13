@@ -9,13 +9,18 @@ module Mygegegems
       save(data, @path)
     end
 
+    def gems(user_handle)
+      get(user_handle)
+    end
+
     private
     def data
       @data ||= load(@path)
     end
 
-    def get
-      Gems.gems.inject({}) { |h, gem| h[gem['name']] = gem['downloads']; h }
+    def get(user_handle=nil)
+      Gems.gems(user_handle)
+          .inject({}) { |h, gem| h[gem['name']] = gem['downloads']; h }
     end
   
     def load(path)
