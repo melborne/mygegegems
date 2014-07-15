@@ -66,7 +66,8 @@ module Mygegegems
 
     no_tasks do
       def header(date1, date2, label)
-        "As of #{date1} (#{label}: \e[33m#{date2}\e[0m)"
+        line = "As of #{date1} (#{label}: #{date2})"
+        line.colco(:yellow, regexp:/(?<=\s)\S+(?=\)$)/)
       end
 
       def body(gems, diffs, space1, space2, sort)
@@ -82,17 +83,21 @@ module Mygegegems
               end
             }.map { |dl, diff, name|
               if diff >= 0
-                "%#{space1}d \e[33m+%#{space2}d \e[32m%s\e[0m" % [dl, diff, name]
+                line = "%#{space1}d +%#{space2}d %s" % [dl, diff, name]
+                re = /\+\s*\d+|\S+/
+                line.colco(nil, :yellow, :green, regexp:re)
               else
                 none = "-".center(space2)
-                "%#{space1}d  \e[33m#{none} \e[32m%s\e[0m" % [dl, name]
+                line = "%#{space1}d  #{none} %s" % [dl, name]
+                line.colco(nil, :yellow, :green)
               end
             }
       end
 
       def footer(total, diff_total, num_of_gems, space1=0, space2=0)
         if diff_total
-          "%#{space1}d \e[33m+%#{space2}d \e[32m%s gems\e[0m" % [total, diff_total, num_of_gems]
+          line = "%#{space1}d +%#{space2}d %s gems" % [total, diff_total, num_of_gems]
+          line.colco(nil, :yellow, :green, :green)
         else
           "%#{space1}d %s gems" % [total, num_of_gems]
         end

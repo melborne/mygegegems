@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'gems'
   spec.add_dependency 'thor'
+  spec.add_dependency 'colcolor', ">= 0.0.3"
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"

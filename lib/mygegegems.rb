@@ -1,5 +1,6 @@
 require "yaml"
 require "gems"
+require "colcolor"
 
 require "mygegegems/version"
 require "mygegegems/client"
