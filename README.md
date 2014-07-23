@@ -1,5 +1,7 @@
 # Mygegegems
 
+[![Build Status](https://travis-ci.org/melborne/mygegegems.svg?branch=master)](https://travis-ci.org/melborne/mygegegems)
+
 Report download numbers of you gems.
 
 ## Installation
