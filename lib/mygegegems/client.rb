@@ -19,8 +19,13 @@ module Mygegegems
     end
 
     def get(user_handle=nil)
-      Gems.gems(user_handle)
-          .inject({}) { |h, gem| h[gem['name']] = gem['downloads']; h }
+      gems = Gems.gems(user_handle)
+      case gems
+      when Array
+        gems.inject({}) { |h, gem| h[gem['name']] = gem['downloads']; h }
+      else
+        {}
+      end
     end
   
     def load(path)
